@@ -14,7 +14,7 @@ export const DateSlider: React.FC<DateSliderProps> = ({
   onDateSelect,
 }) => {
   const scrollContainer = React.useRef<HTMLDivElement>(null);
-
+//Defines a function named scroll to scroll the forecast list based on the provided direction ('left' or 'right').
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainer.current) {
       const scrollAmount = 200;

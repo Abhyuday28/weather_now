@@ -2,20 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Wind, Droplets, Eye, Compass } from 'lucide-react';
 import { WeatherData } from '../types/weather';
 
+//Defines an interface named WeatherCardProps that specifies the expected prop for this component:
 interface WeatherCardProps {
   data: WeatherData;
 }
 
+//Defines a functional component named WeatherCard that takes a single prop named data of type WeatherData.
 export const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
+  //Uses the useEffect hook to update the currentTime state every second.
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, []); //The empty dependency array [] ensures the effect runs only once after the initial render.
 
   const formatTime = (date: Date) => {
     return date.toLocaleString('en-US', {
@@ -40,7 +43,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
         </h2>
         <div className="flex items-center">
           <img
-            src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} //icon by openweather api
             alt={data.weather[0].description}
             className="w-20 h-20"
           />

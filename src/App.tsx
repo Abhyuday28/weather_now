@@ -9,14 +9,19 @@ import { getWeatherBackground } from './utils/weatherBackgrounds';
 
 function App() {
   const [city, setCity] = useState('');
-  const [weather, setWeather] = useState<WeatherData | null>(null);
-  const [forecasts, setForecasts] = useState<ForecastData[]>([]);
+  const [weather, setWeather] = useState<WeatherData | null>(null);  //Creates a state variable named weather with an initial value of null (indicating no weather data yet) and a setter function setWeather to store weather information. The type is set to WeatherData | null using generics to enforce expected data format.
+  const [forecasts, setForecasts] = useState<ForecastData[]>([]); //Creates a state variable named forecasts with an initial value of an empty array and a setter function setForecasts to store forecast data. Again, type is ForecastData[] for consistency.
   const [selectedDate, setSelectedDate] = useState<number>(0);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); //Creates a state variable named loading with an initial value of false and a setter function setLoading to indicate whether weather data is being fetched.
 
-  const API_KEY = 'cfef6f649d07feec51265fe5d3b9483f';
+  const API_KEY = 'cfef6f649d07feec51265fe5d3b9483f'; //Stores the OpenWeatherMap API key for making weather data requests
 
+
+  
+  //Defines an asynchronous function named fetchWeather for fetching weather data. 
+  //checks if the city input is empty after removing leading/trailing whitespace.
+//If empty, sets the error state to indicate missing city input and returns.
   const fetchWeather = async () => {
     if (!city.trim()) {
       setError('Please enter a city name');
@@ -25,20 +30,22 @@ function App() {
 
     setLoading(true);
     setError('');
-
+//wraps the API calls in a try-catch block for error handling.
+//The first call uses axios.get to retrieve current weather data from the OpenWeatherMap API with the specified API key and units (metric).
     try {
       const [currentWeather, forecast] = await Promise.all([
         axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}` //base api for current weather
         ),
         axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}` //base api for forcast
         ),
       ]);
 
       setWeather(currentWeather.data);
       setForecasts(forecast.data.list);
       setSelectedDate(currentWeather.data.dt);
+//Handles potential errors during API calls.
     } catch (err: any) {
       if (axios.isAxiosError(err)) {
         if (err.response?.status === 404) {
@@ -62,6 +69,7 @@ function App() {
     }
   };
 
+  //Defines a function to handle date selection from the date slider.
   const handleDateSelect = (date: number) => {
     setSelectedDate(date);
     const selectedForecast = forecasts.find((f) => f.dt === date);
@@ -76,6 +84,7 @@ function App() {
     }
   };
 
+  //Defines a style object for the background based on weather conditions.
   const backgroundStyle = weather
     ? getWeatherBackground(weather.weather[0].main)
     : {
@@ -85,6 +94,8 @@ function App() {
       };
 
   return (
+    //The return statement renders the JSX structure of the App component, including:
+//The main container with the specified background style.
     <div
       className="min-h-screen bg-gradient-to-br from-blue-400 to-purple-500 flex flex-col items-center py-12 px-4 transition-all duration-1000 ease-in-out"
       style={backgroundStyle}
@@ -96,6 +107,7 @@ function App() {
 
       <SearchBar city={city} setCity={setCity} onSearch={fetchWeather} />
 
+      
       {loading && <div className="mt-8 text-white">Loading...</div>}
 
       {error && (
@@ -115,7 +127,7 @@ function App() {
         </>
       )}
 
-      {!weather && !loading && !error && (
+    {!weather && !loading && !error && (
         <div className="mt-8 text-white text-center">
           <p className="text-xl">Enter a city name to get started</p>
           <p className="text-sm mt-2 text-gray-200">
