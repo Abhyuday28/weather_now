@@ -9,13 +9,13 @@ import { getWeatherBackground } from './utils/weatherBackgrounds';
 
 function App() {
   const [city, setCity] = useState('');
-  const [weather, setWeather] = useState<WeatherData | null>(null);  //Creates a state variable named weather with an initial value of null (indicating no weather data yet) and a setter function setWeather to store weather information. The type is set to WeatherData | null using generics to enforce expected data format.
-  const [forecasts, setForecasts] = useState<ForecastData[]>([]); //Creates a state variable named forecasts with an initial value of an empty array and a setter function setForecasts to store forecast data. Again, type is ForecastData[] for consistency.
+  const [weather, setWeather] = useState<WeatherData | null>(null);  
+  const [forecasts, setForecasts] = useState<ForecastData[]>([]); 
   const [selectedDate, setSelectedDate] = useState<number>(0);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); //Creates a state variable named loading with an initial value of false and a setter function setLoading to indicate whether weather data is being fetched.
+  const [loading, setLoading] = useState(false); 
 
-    const API_KEY = process.env.REACT_APP_API_KEY; 
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
 
   //Defines an asynchronous function named fetchWeather for fetching weather data. 
