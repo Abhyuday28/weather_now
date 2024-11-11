@@ -21,7 +21,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ city, setCity, onSearch })
         value={city}
         onChange={(e) => setCity(e.target.value)}
         onKeyPress={handleKeyPress}
-        placeholder="Enter city name..."
+        placeholder="Enter city name... "
         className="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       />
       <Search

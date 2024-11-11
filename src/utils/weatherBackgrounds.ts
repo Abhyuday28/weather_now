@@ -1,3 +1,5 @@
+//Change the background according to the weather
+
 interface WeatherBackground {
   backgroundImage: string;
   backgroundSize: string;
