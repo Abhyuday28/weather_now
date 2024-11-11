@@ -1,6 +1,11 @@
 # Weather Now
 A Real-time Weather App
 
+
+https://github.com/user-attachments/assets/845843ec-4970-44b6-9aa9-d7579678706f
+
+
+
 ## Installation
 
 Clone this Git repo. https://github.com/Abhyuday28/weather_now
