@@ -21,19 +21,32 @@ npm run dev
 ```
 ## Project Structure 
 ## Features
-### Real-time Weather Updates: Get accurate and up-to-date weather information for any location.
-### City Search: Quickly search for weather data by city name.
-### Daily Forecast: View a 5-day forecast for the selected city.
-### Interactive Date Slider: Easily navigate through the forecast days.
-### Visually Appealing UI: Enjoy a modern and user-friendly interface.
-### Responsive Design: Works seamlessly on various screen sizes.
+### Real-time Weather Updates: 
+Get accurate and up-to-date weather information for any location.
+### City Search: 
+Quickly search for weather data by city name.
+### Daily Forecast: 
+View a 5-day forecast for the selected city.
+### Interactive Date Slider: 
+Easily navigate through the forecast days.
+### Visually Appealing UI: 
+Enjoy a modern and user-friendly interface.
+### Responsive Design: 
+Works seamlessly on various screen sizes.
+
 ## Technologies Used:
-### Stackblitz: Used as free hosting service
-### React: A powerful JavaScript library for building user interfaces.
-### Vite: A modern frontend build tool for faster development.
-### OpenWeatherMap API: Provides real-time weather data.
-### Lucide-React: Icon library for a consistent visual style.
-### Axios: For making HTTP requests to the OpenWeatherMap API.
+### Stackblitz: 
+Used as free hosting service
+### React: 
+A powerful JavaScript library for building user interfaces.
+### Vite: 
+A modern frontend build tool for faster development.
+### OpenWeatherMap API: 
+Provides real-time weather data.
+### Lucide-React: 
+Icon library for a consistent visual style.
+### Axios: 
+For making HTTP requests to the OpenWeatherMap API.
 
 ## Contributing
 
