@@ -15,10 +15,9 @@ function App() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false); //Creates a state variable named loading with an initial value of false and a setter function setLoading to indicate whether weather data is being fetched.
 
-  const API_KEY = 'cfef6f649d07feec51265fe5d3b9483f'; //Stores the OpenWeatherMap API key for making weather data requests
+    const API_KEY = process.env.REACT_APP_API_KEY; 
 
 
-  
   //Defines an asynchronous function named fetchWeather for fetching weather data. 
   //checks if the city input is empty after removing leading/trailing whitespace.
 //If empty, sets the error state to indicate missing city input and returns.

@@ -56,39 +56,39 @@ to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ## Explanation
-.The src directory houses the core logic of the application, including components, types, and utility functions.
+.The [src] directory houses the core logic of the application, including components, types, and utility functions.
 
-.The components directory breaks down the UI into reusable components for better organization and maintainability.
+.The [components] directory breaks down the UI into reusable components for better organization and maintainability.
 
-.The types directory defines types for weather data, ensuring type safety and code clarity.
+.The [types] directory defines types for weather data, ensuring type safety and code clarity.
 
-.The utils directory contains utility functions, such as the weatherBackgrounds function, to handle specific tasks.
+.The [utils] directory contains utility functions, such as the weatherBackgrounds function, to handle specific tasks.
 
-.The App.tsx file is the main entry point of the application, coordinating the flow of data and rendering the UI.
+.The [App.tsx] file is the main entry point of the application, coordinating the flow of data and rendering the UI.
 
-.The index.css file contains global styles for the entire application.
+.The [index.css] file contains global styles for the entire application.
 
-.The main.tsx file is the entry point for the Vite build process.
+.The [main.tsx] file is the entry point for the Vite build process.
 
-.The vite-env.d.ts file declares types for environment variables used in the project.
+.The [vite-env.d.ts] file declares types for environment variables used in the project.
 
-.The .env file stores environment variables, typically used for API keys or other sensitive information.
+.The [.env]file stores environment variables, typically used for API keys or other sensitive information.
 
-.The .gitignore file specifies files and directories that should be ignored by Git.
+.The [.gitignore] specifies files and directories that should be ignored by Git.
 
-.The eslint.config.js file configures ESLint, a linter for JavaScript code.
+.The [eslint.config.js] file configures ESLint, a linter for JavaScript code.
 
-.The index.html file is the main HTML file of the application.
+.The [index.html] file is the main HTML file of the application.
 
-.The package-lock.json and package.json files manage project dependencies and configuration.
+.The [package-lock.json] and [package.json] files manage project dependencies and configuration.
 
-.The postcss.config.js file configures PostCSS, a tool for transforming CSS.
+.The [postcss.config.js] file configures PostCSS, a tool for transforming CSS.
 
-.The README.md file provides documentation about the project.
+.The [README.md] file provides documentation about the project.
 
-.The tailwind.config.js file configures Tailwind CSS, a utility-first CSS framework.
+.The [tailwind.config.js] file configures Tailwind CSS, a utility-first CSS framework.
 
-.The tsconfig.app.json and tsconfig.json files configure TypeScript for the project.
+.The [tsconfig.app.json] and tsconfig.json files configure TypeScript for the project.
 
 .This project structure promotes code organization, modularity, and maintainability, making it easier to work on and understand the application.
 ## License
