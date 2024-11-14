@@ -15,7 +15,8 @@ function App() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false); 
 
-  const API_KEY = import.meta.env.VITE_API_KEY;
+  const API_KEY = '  const API_KEY = 'cfef6f649d07feec51265fe5d3b9483f';
+';
 
 
   //Defines an asynchronous function named fetchWeather for fetching weather data. 
